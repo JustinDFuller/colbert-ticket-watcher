@@ -26,6 +26,7 @@ const mailOptions = {
 }
 
 async function main () {
+  console.log(new Date())
   mailOptions.html = ''
 
   const today = new Date().toDateString()
@@ -55,6 +56,7 @@ async function main () {
 
         // only send if .html has been set
         if (mailOptions.html) {
+          console.log(mailOptions.html)
           transporter.sendMail(mailOptions, function (err, info) {
             if (err) {
               console.log(err)
@@ -63,8 +65,6 @@ async function main () {
             }
           })
         }
-
-        console.log('ran with result', mailOptions)
       })
   })
 
