@@ -46,7 +46,8 @@ async function main () {
           json.events[json.events.length - 1].startDateUTC
         )
 
-        if (events.length) {
+        if (events.length && !found) {
+          found = true
           mailOptions.html = 'events are ready: ' + mostRecentEvent
         } else if (!dates.get(today)) {
           // only send once per day
