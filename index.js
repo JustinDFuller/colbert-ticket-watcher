@@ -25,7 +25,7 @@ const mailOptions = {
   subject: 'Steven Colbert Tickets'
 }
 
-async function main () {
+function main () {
   console.log(new Date())
   mailOptions.html = ''
 
